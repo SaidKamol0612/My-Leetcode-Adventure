@@ -16,32 +16,10 @@ Most solutions are written in a simple and beginner-friendly way, with a focus o
 
 ---
 
-## 🧠 Structure
-
-The repository is organized by problem difficulty and number. Each folder or file typically includes:
-
-- The problem name
-- A short explanation or comments (where helpful)
-- A working Python solution (unless otherwise stated)
-
-Example:
-
-<pre>
-📁 easy/
-│   📁 roman_to_integer/
-│   │   ├── problem.md
-│   │   ├── result.png
-│   │   └── solution.py
-│
-├── README.md
-└── progress.log
-</pre>
-
----
-
 ## 🛠️ Tech Stack
 
 - 🐍 Python 3.x (mainly)
+- SQL (Postgres, MySQL, SQLite)
 - 📝 Plain code with comments — no heavy boilerplate
 
 ---
