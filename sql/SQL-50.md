@@ -1,6 +1,10 @@
 # SQL 50
 
-## Problem: 1
+---
+
+## Select
+
+### Problem: 1
 
 **1757. Recyclable and Low Fat Products**
 
@@ -10,7 +14,7 @@ SELECT product_id FROM Products
 WHERE low_fats = 'Y' and recyclable = 'Y';
 ```
 
-## Problem: 2
+### Problem: 2
 
 **584. Find Customer Referee**
 
@@ -20,7 +24,7 @@ SELECT name FROM Customer
 WHERE referee_id is null or referee_id != 2;
 ```
 
-## Problem: 3
+### Problem: 3
 
 **595. Big Countries**
 
@@ -30,7 +34,7 @@ SELECT name, population, area FROM World
 WHERE area >= 3000000 or population >= 25000000;
 ```
 
-## Problem: 4
+### Problem: 4
 
 **1148. Article Views I**
 
@@ -41,7 +45,7 @@ WHERE author_id = viewer_id
 ORDER BY author_id ASC;
 ```
 
-## Problem: 5
+### Problem: 5
 
 **1683. Invalid Tweets**
 
@@ -51,7 +55,11 @@ SELECT tweet_id FROM Tweets
 WHERE LENGTH(content) > 15;
 ```
 
-## Problem: 6
+---
+
+# Basic Joins
+
+### Problem: 6
 
 **1378. Replace Employee ID With The Unique Identifier**
 
@@ -61,7 +69,7 @@ SELECT u.unique_id, e.name FROM Employees e
 LEFT JOIN EmployeeUNI u ON u.id = e.id;
 ```
 
-## Problem: 7
+### Problem: 7
 
 **1068. Product Sales Analysis I**
 
@@ -71,7 +79,7 @@ SELECT p.product_name, s.year, s.price FROM Product p
 RIGHT JOIN Sales s ON s.product_id = p.product_id;
 ```
 
-## Problem: 8
+### Problem: 8
 
 **1581. Customer Who Visited but Did Not Make Any Transactions**
 
@@ -85,7 +93,7 @@ WHERE t.visit_id IS NULL
 GROUP BY v.customer_id;
 ```
 
-## Problem: 9
+### Problem: 9
 
 **197. Rising Temperature**
 
@@ -96,7 +104,7 @@ RIGHT JOIN Weather w2 ON TIMESTAMPDIFF(DAY, w1.recordDate, w2.recordDate) = 1
 WHERE w1.temperature < w2.temperature;
 ```
 
-## Problem: 10
+### Problem: 10
 
 **1661. Average Time of Process per Machine**
 
@@ -114,7 +122,7 @@ and a2.activity_type = 'end'
 GROUP BY a1.machine_id;
 ```
 
-## Problem: 11
+### Problem: 11
 
 **577. Employee Bonus**
 
@@ -125,7 +133,7 @@ LEFT JOIN Bonus b ON e.empId = b.empId
 WHERE b.bonus < 1000 or b.bonus is NULL;
 ```
 
-## Problem: 12
+### Problem: 12
 
 **1280. Students and Examinations**
 
@@ -145,7 +153,7 @@ GROUP BY s.student_name, sub.subject_name
 ORDER BY s.student_id, sub.subject_name;
 ```
 
-## Problem 13
+### Problem 13
 
 **570. Managers with at Least 5 Direct Reports**
 
@@ -158,7 +166,7 @@ GROUP BY e1.id, e1.name
 HAVING COUNT(e2.id) >= 5;
 ```
 
-## Problem 14
+### Problem 14
 
 **1934. Confirmation Rate**
 
@@ -166,7 +174,11 @@ HAVING COUNT(e2.id) >= 5;
 -- Solution
 ```
 
-## Problem 15
+---
+
+## Basic Aggregate Functions
+
+### Problem 15
 
 **620. Not Boring Movies**
 
@@ -177,7 +189,7 @@ WHERE MOD(id, 2) = 1 and description != "boring"
 ORDER BY rating DESC;
 ```
 
-## Problem: 16
+### Problem: 16
 
 **1251. Average Selling Price**
 
