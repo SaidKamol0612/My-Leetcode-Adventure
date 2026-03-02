@@ -22,18 +22,18 @@ solution = Solution()
 res = solution.findSubarrays([4, 2, 4])
 print(res, end=" ")
 print(
-    res == True
+    res
 )  # Explanation: The subarrays with elements [4,2] and [2,4] have the same sum of 6.
 
 # Testcase 2
 res = solution.findSubarrays([1, 2, 3, 4, 5])
 print(res, end=" ")
-print(res == False)  # Explanation: No two subarrays of size 2 have the same sum.
+print(not res)  # Explanation: No two subarrays of size 2 have the same sum.
 
 # Testcase 3
 res = solution.findSubarrays([0, 0, 0])
 print(res, end=" ")
 print(
-    res == True
+    res
 )  # Explanation: The subarrays [nums[0],nums[1]] and [nums[1],nums[2]] have the same sum of 0.
 # Note that even though the subarrays have the same content, the two subarrays are considered different because they are in different positions in the original array.

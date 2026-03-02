@@ -4,7 +4,7 @@ class Solution:
     """
 
     def searchInsert(self, nums: list[int], target: int) -> int:
-        if not target in nums:
+        if target not in nums:
             nums.append(target)
             nums.sort()
             return nums.index(target)

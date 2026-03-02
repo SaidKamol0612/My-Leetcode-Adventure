@@ -30,24 +30,24 @@ solution = Solution()
 # Testcase 1
 res = solution.isValid("()")
 print(res, end=" ")
-print(res == True)
+print(res)
 
 # Testcase 2
 res = solution.isValid("()[]{}")
 print(res, end=" ")
-print(res == True)
+print(res)
 
 # Testcase 3
 res = solution.isValid("(]")
 print(res, end=" ")
-print(res == False)
+print(not res)
 
 # Testcase 4
 res = solution.isValid("([])")
 print(res, end=" ")
-print(res == True)
+print(res)
 
 # Testcase 5
 res = solution.isValid("([)]")
 print(res, end=" ")
-print(res == False)
+print(not res)
