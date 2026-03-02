@@ -1,6 +1,6 @@
-# 📘 My-Leetcode-Solutions
+# 📘 My Leetcode Adventure
 
-Welcome! This repository contains my daily solutions to various [LeetCode](https://leetcode.com) problems.  
+Welcome! This repository contains solutions to various [LeetCode](https://leetcode.com) problems.  
 Most solutions are written in a simple and beginner-friendly way, with a focus on clarity and consistency.
 
 > ⚠️ Note: These solutions are intended mainly for learning and practice. If you're an experienced developer looking for optimized or advanced techniques, this repo might not be for you.
