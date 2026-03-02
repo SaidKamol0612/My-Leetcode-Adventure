@@ -1,30 +1,9 @@
-class Solution(object):
+class Solution:
     """
-    # Add Binary
-
-    Difficulty: EASY.
-
     [View this problem on Leetcode](https://leetcode.com/problems/add-binary/)
-
-    ## Description
-
-    Give two binary `a` and `b`, return _their sum as a binary string_.
-
-    ## Examples
-
-    **Input:** a = "11", b = "1"
-    **Output:** "100"
-
-    **Input:** a = "1010", b = "1011"
-    **Output:** "10101"
     """
 
-    def addBinary(self, a, b):
-        """
-        :type a: str
-        :type b: str
-        :rtype: str
-        """
+    def addBinary(self, a: str, b: str) -> str:
         if not a or not b or len(a) < 1 or len(b) < 1:
             return a or b or "0"
 

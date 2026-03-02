@@ -1,30 +1,9 @@
-class Solution(object):
+class Solution:
     """
-        # Longest Common Prefix
-
-    Difficulty: EASY.
-
     [View this problem on Leetcode](https://leetcode.com/problems/longest-common-prefix/)
-
-    ## Description
-
-    Write a function to find the longest common prefix string amongst an array of strings.
-    If there is no common prefix, return an empty string `""`.
-
-    ## Examples
-
-    **Input:** strs = ["flower", "flow", "flight"]
-    **Output:** "fl"
-
-    **Input:** strs = ["dog", "racecar", "car"]
-    **Output:** ""
     """
 
-    def longestCommonPrefix(self, strs):
-        """
-        :type strs: List[str]
-        :rtype: str
-        """
+    def longestCommonPrefix(self, strs: list[str]) -> str:
         strs = list(set(strs))
 
         prefix = ""

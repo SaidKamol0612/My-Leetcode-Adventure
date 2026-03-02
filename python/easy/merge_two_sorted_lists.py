@@ -1,47 +1,33 @@
-from typing import Optional
+from typing import Self
 
 
 # Definition for singly-linked list.
-class ListNode(object):
-    def __init__(self, val=0, next=None):
+class ListNode:
+    def __init__(self, val: int = 0, next: Self | None = None):
         self.val = val
         self.next = next
 
-    def __eq__(self, other):
+    def __eq__(self, other: object) -> bool:
         if not isinstance(other, ListNode):
             return False
         return self.val == other.val and self.next == other.next
 
+    def __repr__(self) -> str:
+        val = str(self.val)
+        if self.next:
+            return val + " -> " + self.next.__repr__()
+        else:
+            return val
+
 
 class Solution(object):
     """
-        # Merge Two Sorted Lists
-
-    Difficulty: EASY.
-
     [View this problem on Leetcode](https://leetcode.com/problems/merge-two-sorted-lists/)
-
-    ## Description
-
-    You are given the heads of two sorted linked lists `list1` and `list2`.
-
-    Merge the two lists into **sorted** list. The list should be made by splicing together the nodes of the first two lists.
-
-    Return the head of the _merged linked list_.
-
-    ## Examples
-
-    **Input:** list1 = [1, 2, 4], list2 = [1, 3, 4]
-    **Output:** [1, 1, 2, 3, 4, 4]
-
-    **Input:** list1 = [], list2 = []
-    **Output:** []
-
-    **Input:** list1 = [], list2 = [0]
-    **Output:** [0]
     """
 
-    def mergeTwoLists(self, list1, list2):
+    def mergeTwoLists(
+        self, list1: ListNode | None, list2: ListNode | None
+    ) -> ListNode | None:
         """
         :type list1: Optional[ListNode]
         :type list2: Optional[ListNode]
@@ -69,18 +55,11 @@ class Solution(object):
 solution = Solution()
 
 
-def print_list(node):
-    while node:
-        print(node.val, end=" -> ")
-        node = node.next
-    print("None")
-
-
 # Testcase 1
 list1 = ListNode(1, ListNode(2, ListNode(4)))
 list2 = ListNode(1, ListNode(3, ListNode(4)))
 res = solution.mergeTwoLists(list1, list2)
-print_list(res)
+print(res, end=" ")
 print(
     res == ListNode(1, ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(4))))))
 )
@@ -89,12 +68,12 @@ print(
 list1 = None
 list2 = None
 res = solution.mergeTwoLists(list1, list2)
-print_list(res)
+print(res, end=" ")
 print(res == None)
 
 # Testcase 3
 list1 = None
 list2 = ListNode(0)
 res = solution.mergeTwoLists(list1, list2)
-print_list(res)
+print(res, end=" ")
 print(res == ListNode(0))

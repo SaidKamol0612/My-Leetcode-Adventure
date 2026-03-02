@@ -1,39 +1,14 @@
-class Solution(object):
+class Solution:
     """
-        # Longest Palindromic Substring
-
-    Difficulty: EASY.
-
     [View this problem on Leetcode](https://leetcode.com/problems/power-of-three/)
-
-    ## Description
-
-    Given an integer `n`, return `true` _if it is a power of three. Otherwise, return `false`_.
-
-    An integer `n` is a power of three, if there exists an integer `x` such that `n == 3**x`.
-
-    ## Examples
-
-    **Input:** n = 27
-    **Output:** true
-
-    **Input:** n = 0
-    **Output:** false
-
-    **Input:** n = -1
-    **Output:** false
     """
 
-    def isPowerOfThree(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
+    def isPowerOfThree(self, n: int) -> bool:
         if n <= 0:
             return False
 
         while n % 3 == 0:
-            n = n / 3
+            n = n // 3
         return n == 1
 
 
