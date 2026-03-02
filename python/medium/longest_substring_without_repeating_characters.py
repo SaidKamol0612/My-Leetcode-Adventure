@@ -1,25 +1,18 @@
-class Solution(object):
-    def lengthOfLongestSubstring(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        subs = []
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        if not s:
+            return 0
 
-        m = 1
-        for start in range(len(s)):
-            for end in range(start + m, len(s)):
-                if s[start] in s[start + 1:end]:
+        longest_sub = 1
+        for i in range(len(s)):
+            for j in range(i, len(s)):
+                if s[j] in s[i:j]:
+                    longest_sub = max(j - i, longest_sub)
                     break
-                
-                sub = s[start:end]
-                print(sub)
-                set_sub = set(list(sub))
-                if len(sub) == len(set_sub):
-                    if m < len(sub):
-                        m = len(sub)
-                    subs.append(len(sub))
-        return max(subs)
+            else:
+                longest_sub = max(len(s) - i, longest_sub)
+
+        return longest_sub
 
 
 solution = Solution()
