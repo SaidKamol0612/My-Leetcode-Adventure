@@ -28,28 +28,23 @@ class Solution(object):
     def mergeTwoLists(
         self, list1: ListNode | None, list2: ListNode | None
     ) -> ListNode | None:
-        """
-        :type list1: Optional[ListNode]
-        :type list2: Optional[ListNode]
-        :rtype: Optional[ListNode]
-        """
         if not list1 or not list2:
             return list1 or list2
 
-        curr = ListNode(-101, None)
-        first = ListNode(-101, curr)
+        dump_head = ListNode(-101, ListNode(-101, None))
+        curr = dump_head
 
-        while curr != None and list1 != None and list2 != None:
+        while curr and list1 and list2:
             if list1.val <= list2.val:
-                curr.next = ListNode(list1.val, list2)
+                curr.next = list1
                 list1 = list1.next
             else:
-                curr.next = ListNode(list2.val, list1)
+                curr.next = list2
                 list2 = list2.next
-
             curr = curr.next
 
-        return first.next.next
+        curr.next = list1 or list2
+        return dump_head.next
 
 
 solution = Solution()
@@ -69,7 +64,7 @@ list1 = None
 list2 = None
 res = solution.mergeTwoLists(list1, list2)
 print(res, end=" ")
-print(res == None)
+print(res is None)
 
 # Testcase 3
 list1 = None
