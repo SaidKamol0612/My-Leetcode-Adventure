@@ -1,9 +1,9 @@
-from typing import Optional, Self
+from typing import Self
 
 
 # Definition for singly-linked list.
-class ListNode(object):
-    def __init__(self, val: int = 0, next: Optional[Self] = None):
+class ListNode:
+    def __init__(self, val: int = 0, next: Self | None = None):
         self.val = val
         self.next = next
 
@@ -20,14 +20,14 @@ class ListNode(object):
             return val
 
 
-class Solution(object):
+class Solution:
     """
     [View this problem on Leetcode](https://leetcode.com/problems/add-two-numbers/)
     """
 
     def addTwoNumbers(
-        self, l1: Optional[ListNode], l2: Optional[ListNode]
-    ) -> Optional[ListNode]:
+        self, l1: ListNode | None, l2: ListNode | None
+    ) -> ListNode | None:
         dump_head = ListNode(0)
         current = dump_head
         carry = 0

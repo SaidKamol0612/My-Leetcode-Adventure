@@ -1,4 +1,4 @@
-class Solution(object):
+class Solution:
     """
     [View this problem on Leetcode](https://leetcode.com/problems/container-with-most-water/)
     """
