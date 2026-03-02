@@ -1,12 +1,7 @@
-import math
+class Solution:
+    def convert(self, s: str, numRows: int) -> str:
+        import math
 
-class Solution(object):
-    def convert(self, s, numRows):
-        """
-        :type s: str
-        :type numRows: int
-        :rtype: str
-        """
         num_cols = math.ceil(len(s) / numRows)
 
         # Preallocate m with None (or spaces) so you can assign later
