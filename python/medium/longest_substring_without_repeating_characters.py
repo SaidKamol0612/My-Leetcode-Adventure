@@ -1,18 +1,19 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        if not s:
-            return 0
+        longest = 0
 
-        longest_sub = 1
-        for i in range(len(s)):
-            for j in range(i, len(s)):
-                if s[j] in s[i:j]:
-                    longest_sub = max(j - i, longest_sub)
-                    break
-            else:
-                longest_sub = max(len(s) - i, longest_sub)
+        hp: dict[str, int] = {}
+        left = 0
+        right = 0
+        while right < len(s):
+            if s[right] in hp:
+                left = max(left, hp[s[right]] + 1)
 
-        return longest_sub
+            hp[s[right]] = right
+            longest = max(right - left + 1, longest)
+            right += 1
+
+        return longest
 
 
 solution = Solution()
