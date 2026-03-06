@@ -1,18 +1,7 @@
 class Solution:
     def squareIsWhite(self, coordinates: str) -> bool:
-        char_to_num = {
-            "a": 1,
-            "b": 2,
-            "c": 3,
-            "d": 4,
-            "e": 5,
-            "f": 6,
-            "g": 7,
-            "h": 8,
-        }
-
         char, num = coordinates
-        return (char_to_num[char] + int(num)) % 2 != 0
+        return ((ord(char) - 96) + int(num)) % 2 != 0
 
 
 solution = Solution()
